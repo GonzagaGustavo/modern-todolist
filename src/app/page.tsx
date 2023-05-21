@@ -6,6 +6,7 @@ export default function Home() {
   return (
     <main className={styles.main}>
       <Actions />
+      {/* @ts-expect-error Async Server Component */}
       <List />
     </main>
   );
