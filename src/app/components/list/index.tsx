@@ -8,7 +8,7 @@ export type ListType = {
 };
 
 export default async function List() {
-  const response = await fetch("http://localhost:8000/list", {
+  const response = await fetch("https://modern-todolist.onrender.com/list", {
     method: "GET",
     cache: "no-cache",
   });
