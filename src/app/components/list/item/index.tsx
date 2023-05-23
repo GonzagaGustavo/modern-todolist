@@ -2,16 +2,20 @@
 
 import React from "react";
 import { ListType } from "..";
+import { useRouter } from "next/navigation";
 
 type Props = {
   task: ListType;
 };
 
 export default function Item({ task }: Props) {
-  function deleteTask(id: number) {
-    fetch(`https://modern-todolist.onrender.com/list/${id}`, {
+  const router = useRouter();
+
+  async function deleteTask(id: number) {
+    await fetch(`https://modern-todolist.onrender.com/list/${id}`, {
       method: "DELETE",
     });
+    router.refresh();
   }
 
   return (
