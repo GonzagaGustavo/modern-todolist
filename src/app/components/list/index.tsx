@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./list.module.css";
+import Item from "./item";
 
 export type ListType = {
   id: number;
@@ -17,7 +18,7 @@ export default async function List() {
   return (
     <div>
       {list.map((task) => (
-        <p key={task.id}>{task.content}</p>
+        <Item key={task.id} task={task} />
       ))}
     </div>
   );
